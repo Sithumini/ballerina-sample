@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+    commands:
+      - echo install step...
+  pre_build:
+    commands:
+      - echo prebuild
+  build:
+    commands:
+      - docker version
+      - docker build -t test:test .
+  post_build:
+    commands:
+      - echo postbuild
